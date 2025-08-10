@@ -43,7 +43,7 @@ class WandBLogger(object):
     @staticmethod
     def get_default_config(updates=None):
         config = ConfigDict()
-        config.online = True
+        config.online = False
         config.prefix = ''
         config.project = 'H2O+'
         config.entity = None

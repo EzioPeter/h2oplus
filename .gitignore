@@ -6,7 +6,6 @@ __pycache__/
 /wandb/*
 /train/wandb/*
 /documents/*
-/xml_path/*
 /wandb/*
 /test/wandb/*
 /d4rl_mujoco_dataset/*
