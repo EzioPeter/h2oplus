@@ -131,7 +131,7 @@ def main(argv):
                     elif unreal_dynamics == "friction":
                         real_env = get_new_friction_env(1, off_env_name)
                         sim_env = get_new_friction_env(variety_degree, off_env_name)
-                    elif unreal_dynamics == "broken_thigh":
+                    elif unreal_dynamics == "thigh_range":
                         real_env = get_new_thigh_range_env(1, off_env_name)
                         sim_env = get_new_thigh_range_env(variety_degree, off_env_name)
                     elif unreal_dynamics == "ellipsoid_foot":
