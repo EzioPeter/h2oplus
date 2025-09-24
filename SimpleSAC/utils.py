@@ -43,9 +43,9 @@ class WandBLogger(object):
     @staticmethod
     def get_default_config(updates=None):
         config = ConfigDict()
-        config.online = False
+        config.online = True
         config.prefix = ''
-        config.project = 'H2O+'
+        config.project = 'H2Oplus_origin'
         config.entity = None
         config.output_dir = './experiment_output'
         config.random_delay = 0.0

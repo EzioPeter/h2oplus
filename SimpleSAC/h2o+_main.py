@@ -12,11 +12,11 @@ import absl.app
 import absl.flags
 import d4rl
 import gym
-import robel
+# import robel
 import numpy as np
 import torch
 import wandb
-import ipdb
+# import ipdb
 from tqdm import trange
 
 from envs import get_new_density_env, get_new_friction_env, get_new_gravity_env, get_new_thigh_range_env, get_new_foot_shape_env, get_new_foot_stiffness_env, get_new_thigh_size_env, get_new_ellipsoid_limb_env, get_new_box_limb_env, get_new_head_size_env, get_new_torso_length_env, get_new_limb_stiffness_env, get_new_tendon_elasticity_env
@@ -27,7 +27,9 @@ from h2oplus import H2OPLUS
 from utils import (Timer, WandBLogger, define_flags_with_default,
                 get_user_flags, prefix_metrics, print_flags,
                 set_random_seed)
-
+# If you live in China mainland and want to use wandb, you can use this wandb mirror to solve the problem of network.
+import os
+os.environ["WANDB_BASE_URL"] = "https://api.bandw.top"
 sys.path.append("..")
 
 from Network.Dynamics_net import Dynamics
@@ -85,7 +87,9 @@ FLAGS_DEF = define_flags_with_default(
 
 
 def main(argv):
+    random_seed = np.random.randint(0, 100)
     FLAGS = absl.flags.FLAGS
+    FLAGS.seed = random_seed
 
     # define logged variables for wandb
     variant = get_user_flags(FLAGS, FLAGS_DEF)

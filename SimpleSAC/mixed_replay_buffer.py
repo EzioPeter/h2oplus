@@ -84,7 +84,7 @@ class MixedReplayBuffer(ReplayBuffer):
                 s_ = np.array([dataset[i][3] for i in idx]).astype(np.float32) # An (N, dim_observation)-dimensional numpy array of next observations
                 done = np.expand_dims(np.array([dataset[i][4] for i in idx]), axis=1) # An (N,)-dimensional numpy array of terminal flags
         else:
-            path = os.path.join("../d4rl_mujoco_dataset", "{}_{}-v2.hdf5".format(task, data_source))
+            path = os.path.join("../../d4rl_mujoco_dataset", "{}_{}-v2.hdf5".format(task, data_source))
             with h5py.File(path, "r") as dataset:
                 total_num = dataset['observations'].shape[0]
                 use_timeouts = ('timeouts' in dataset)

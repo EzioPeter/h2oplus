@@ -17,7 +17,7 @@ class StepSampler(object):
             self.d_sas = dis[1]
             self.clip_dynamics_ratio_min = dis[2]
             self.clip_dynamics_ratio_max = dis[3]
-        self._current_observation = self.env.reset(seed=42)
+        self._current_observation = self.env.reset()
 
     def sample(self, policy, n_steps, deterministic=False, replay_buffer=None, joint_noise_std=0.):
         observations = []
@@ -82,7 +82,7 @@ class StepSampler(object):
 
             if done or self._traj_steps >= self.max_traj_length:
                 self._traj_steps = 0
-                self._current_observation = self.env.reset(seed=42)
+                self._current_observation = self.env.reset()
 
         if self._dis:
             sim_real_dynamics_ratio = self.sim_real_dynamics_ratio(observations, actions, next_observations)
@@ -150,7 +150,7 @@ class TrajSampler(object):
             next_observations = []
             dones = []
 
-            observation = self.env.reset(seed=42)
+            observation = self.env.reset()
             if isinstance(observation, torch.Tensor):
                 observation = observation.cpu().numpy()
 
