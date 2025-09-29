@@ -17,6 +17,7 @@ __pycache__/
 /SimpleSAC/mixed_replay_buffer.py/*pdb*/
 /*.pdf
 /*.npy
+run_h2oplus_*.sh
 
 # C extensions
 *.so
