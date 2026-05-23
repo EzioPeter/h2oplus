@@ -95,6 +95,7 @@ ipython_config.py
 
 # pyenv
 .python-version
+!.python-version
 
 # celery beat schedule file
 celerybeat-schedule
@@ -130,3 +131,5 @@ dmypy.json
 .pyre/
 
 .idea/
+
+.vscode/
